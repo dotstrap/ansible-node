@@ -1,0 +1,21 @@
+---
+# tasks file for npm
+
+# install
+- block:
+  - name: package | npm
+    package:
+      name: npm
+      state: "{{ install_state }}"
+
+  - name: npm | node_modules
+    npm:
+      name: "{{ item }}"
+      state: "{{ install_state }}"
+      global: "{{ node_global_install }}"
+      unsafe_perm: yes
+    with_items: "{{ node_modules }}"
+  tags:
+    - bootstrap
+    - install
+    - update

@@ -1,0 +1,13 @@
+---
+# defaults file for npm
+
+install_state: present
+configuration_state: present
+
+node_modules:
+  - cloudconvert-cli
+  - express
+  - gulp
+  - webpack
+
+node_global_install: true
