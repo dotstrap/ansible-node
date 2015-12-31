@@ -1,5 +1,5 @@
-npm
-=========
+ansible-npm
+===========
 [![Build Status](https://travis-ci.org/mkwmms/ansible-npm.svg)](https://travis-ci.org/mkwmms/ansible-npm)
 
 Install & configure npm.
