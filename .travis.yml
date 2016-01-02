@@ -29,7 +29,7 @@ script:
   - >
     ansible-playbook tests/test.yml
     -i tests/inventory -c local -b -vvv
-    -e '{node_modules: [express, gulp, karma, mongoose, webpack, yo]}'
+    -e '{node_modules: [gulp, express, karma, mongoose, webpack, yo]}'
 
   # Run the role again, checking to make sure it's idempotent
   # - >

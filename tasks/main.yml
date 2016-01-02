@@ -9,7 +9,7 @@
         name: "{{ item }}"
         state: "{{ install_state }}"
         global: "{{ node_global_install }}"
-        path: "{{ node_modules_path | default(omit) }}"
+        path: "{{ node_modules_path }}"
       with_items: "{{ node_modules }}"
 
     - name: package | uninstall npm
