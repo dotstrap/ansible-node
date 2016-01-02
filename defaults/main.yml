@@ -6,9 +6,13 @@ node_name: npm
 
 # The node.js libraries to install
 node_modules:
+  - bower
   - express
   - gulp
+  - karma
+  - mongoose
   - webpack
+  - yo
 
 # The state of node/npm & each node.js library (Choices: present, absent, latest)
 install_state: present
