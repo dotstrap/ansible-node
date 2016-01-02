@@ -26,11 +26,14 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 
   # Run the role
-  - ansible-playbook tests/test.yml -i tests/inventory --connection=local -b -vvv
+  - >
+    ansible-playbook tests/test.yml
+    -i tests/inventory -c local -b -vvv
+    -e '{node_modules: [express, gulp, karma, mongoose, webpack, yo]}'
 
   # Run the role again, checking to make sure it's idempotent
   # - >
-    # ansible-playbook tests/test.yml -i tests/inventory --connection=local -b
+    # ansible-playbook tests/test.yml -i tests/inventory -c local -b
     # | grep -q 'changed=0.*failed=0'
     # && (echo 'Idempotence test: pass' && exit 0)
     # || (echo 'Idempotence test: fail' && exit 1)
