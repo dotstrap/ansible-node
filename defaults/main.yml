@@ -15,7 +15,7 @@ node_modules:
   - yo
 
 # The state of node/npm & each node.js library (Choices: present, absent, latest)
-install_state: present
+install_state: latest
 
 # Install the node.js libraries globally (Choices: yes, no)
 node_global_install: yes
