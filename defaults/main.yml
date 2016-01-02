@@ -6,7 +6,6 @@ node_name: npm
 
 # The node.js libraries to install
 node_modules:
-  - cloudconvert-cli
   - express
   - gulp
   - webpack
