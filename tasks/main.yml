@@ -1,20 +1,16 @@
 ---
-# tasks file for npm
 
-# install
 - block:
-  - name: package | npm
-    package:
-      name: npm
-      state: "{{ install_state }}"
+    - name: package | npm
+      package: name="{{ node_name }}" state="{{ install_state }}"
 
-  - name: npm | node_modules
-    npm:
-      name: "{{ item }}"
-      state: "{{ install_state }}"
-      global: "{{ node_global_install }}"
-      unsafe_perm: yes
-    with_items: "{{ node_modules }}"
+    - name: npm | node_modules
+      npm:
+        name: "{{ item }}"
+        state: "{{ install_state }}"
+        global: "{{ node_global_install }}"
+        path: "{{ node_modules_path | default(omit) }}"
+      with_items: "{{ node_modules }}"
   tags:
     - bootstrap
     - install

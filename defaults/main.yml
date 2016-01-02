@@ -1,13 +1,22 @@
 ---
-# defaults file for npm
 
-install_state: present
-configuration_state: present
+# The specific package name used to install node
+# by specifying npm - apt, pacman & Homebrew will install both node.js & npm
+node_name: npm
 
+# The node.js libraries to install
 node_modules:
   - cloudconvert-cli
   - express
   - gulp
   - webpack
 
-node_global_install: true
+# The state of node/npm & each node.js library (Choices: present, absent, latest)
+install_state: present
+
+# Install the node.js libraries globally (Choices: yes, no)
+node_global_install: yes
+
+# The base path where to install the node.js libraries
+# (Required when global == False)
+node_modules_path: null

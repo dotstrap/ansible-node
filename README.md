@@ -1,8 +1,8 @@
-ansible-npm
-===========
-[![Build Status](https://travis-ci.org/mkwmms/ansible-npm.svg)](https://travis-ci.org/mkwmms/ansible-npm)
+ansible-node
+============
+[![Build Status](https://travis-ci.org/mkwmms/ansible-node.svg)](https://travis-ci.org/mkwmms/ansible-node)
 
-Install & configure npm.
+Install & configure [nodejs] & [npm].
 
 Requirements
 ------------
@@ -27,7 +27,7 @@ Using all the [default variables]:
 ```
     - hosts: servers
       roles:
-         - role: mkwmms.npm
+         - role: mkwmms.node
 ```
 
 License
@@ -53,3 +53,5 @@ Author Information
 [variables]: vars/
 [yaourt]: https://github.com/archlinuxfr/yaourt
 [zsh]: http://zsh.sourceforge.net
+[nodejs]: http://nodejs.org/
+[npm]: https://www.npmjs.com/
