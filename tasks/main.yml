@@ -1,8 +1,8 @@
 ---
 
 - block:
-    - name: package | npm
-      package: name="{{ node_name }}" state="{{ install_state }}"
+    - name: package | install npm
+      package: name="{{ node_name }}" state=present
 
     - name: npm | node_modules
       npm:
@@ -11,6 +11,10 @@
         global: "{{ node_global_install }}"
         path: "{{ node_modules_path | default(omit) }}"
       with_items: "{{ node_modules }}"
+
+    - name: package | uninstall npm
+      package: name="{{ node_name }}" state=absent
+      when: install_state == 'absent'
   tags:
     - bootstrap
     - install
