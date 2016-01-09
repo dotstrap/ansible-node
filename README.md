@@ -4,10 +4,17 @@ ansible-node
 
 Install & configure [nodejs] & [npm].
 
+Installation
+------------
+
+```
+ansible-galaxy install mkwmms.node
+```
+
 Requirements
 ------------
 
-A package manager.
+A system package manager.
 
 Role Variables
 --------------
@@ -25,7 +32,7 @@ Example Playbook
 Using all the [default variables]:
 
 ```
-    - hosts: servers
+    - hosts: all
       roles:
          - role: mkwmms.node
 ```
