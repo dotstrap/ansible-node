@@ -1,6 +1,6 @@
 ansible-node
 ============
-[![Build Status](https://travis-ci.org/mkwmms/ansible-node.svg)](https://travis-ci.org/mkwmms/ansible-node)
+[![Build Status](https://travis-ci.org/mwilliammyers/ansible-node.svg)](https://travis-ci.org/mwilliammyers/ansible-node)
 
 Install & configure [nodejs] & [npm].
 
@@ -8,7 +8,7 @@ Installation
 ------------
 
 ```
-ansible-galaxy install mkwmms.node
+ansible-galaxy install mwilliammyers.node
 ```
 
 Requirements
@@ -34,7 +34,7 @@ Using all the [default variables]:
 ```
     - hosts: all
       roles:
-         - role: mkwmms.node
+         - role: mwilliammyers.node
 ```
 
 License
@@ -45,12 +45,12 @@ GPLv3
 Author Information
 ------------------
 
-[@mkwmms]
+[@mwilliammyers]
 
-[@mkwmms]: https://github.com/mkwmms
+[@mwilliammyers]: https://github.com/mwilliammyers
 [aura]: https://github.com/aurapm/aura
 [default variables]: defaults/main.yml
-[dotstrap]: https://github.com/mkwmms/dotstrap
+[dotstrap]: https://github.com/mwilliammyers/dotstrap
 [fasd]: https://github.com/clvv/fasd
 [files]: files/
 [fish]: http://fishshell.com/
