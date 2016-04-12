@@ -1,6 +1,6 @@
 ansible-node
 ============
-[![Build Status](https://travis-ci.org/mwilliammyers/ansible-node.svg)](https://travis-ci.org/mwilliammyers/ansible-node)
+[![Build Status](https://travis-ci.org/dotstrap/ansible-node.svg)](https://travis-ci.org/dotstrap/ansible-node)
 
 Install & configure [nodejs] & [npm].
 
@@ -8,7 +8,7 @@ Installation
 ------------
 
 ```
-ansible-galaxy install mwilliammyers.node
+ansible-galaxy install dotstrap.node
 ```
 
 Requirements
@@ -34,7 +34,7 @@ Using all the [default variables]:
 ```
     - hosts: all
       roles:
-         - role: mwilliammyers.node
+         - role: dotstrap.node
 ```
 
 License
