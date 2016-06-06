@@ -17,5 +17,8 @@
       when: install_state == 'absent'
   tags:
     - bootstrap
+    - bootstrap_node
     - install
+    - install_node
     - update
+    - update_node
