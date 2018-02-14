@@ -1,21 +1,18 @@
 ---
 
-# The specific package name used to install node
-# by specifying npm - apt, pacman & Homebrew will install both node.js & npm
-node_name: npm
-
-# The node.js libraries to install
-node_modules:
-  - bower
-  - express
-  - gulp
-  - karma
-  - mongoose
-  - webpack
-  - yo
-
-# The state of node/npm & each node.js library (Choices: present, absent, latest)
+# The installation state of node used by the system's package manager
+# choices: [ present, latest, absent ]
 install_state: present
+
+# Override this instead of install_state if you use that elsewhere
+# choices: [ present, latest, absent ]
+node_install_state: "{{ install_state }}"
+
+# The specific package name used to install node
+node_name: "{{ node_default_name }}"
+
+# The major version of node to install
+node_version: 9
 
 # Install the node.js libraries globally (Choices: yes, no)
 node_global_install: yes
@@ -23,3 +20,6 @@ node_global_install: yes
 # The base path where to install the node.js libraries
 # (Required when global == False)
 node_modules_path: null
+
+# List of node modules to install
+node_modules: []

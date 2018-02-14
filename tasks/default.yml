@@ -1,0 +1,4 @@
+- name: "Ensure Node.js and npm are {{ node_install_state }}"
+  package:
+    name: "{{ node_name }}"
+    state: "{{ node_install_state }}"

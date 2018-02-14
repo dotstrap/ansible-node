@@ -1,20 +1,28 @@
----
+- name: setup
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_pkg_mgr }}.yml"
+    - "default.yml"
+  tags: always
 
-- block:
-    - name: package | install npm
-      package: name="{{ node_name }}" state=present
+- include_tasks: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_os_family | lower }}.yml"
+    - "default.yml"
+  tags:
+    - bootstrap
+    - bootstrap_node
+    - install
+    - install_node
+    - update
+    - update_node
 
-    - name: npm | node_modules
-      npm:
-        name: "{{ item }}"
-        state: "{{ install_state }}"
-        global: "{{ node_global_install }}"
-        path: "{{ node_modules_path }}"
-      with_items: "{{ node_modules }}"
-
-    - name: package | uninstall npm
-      package: name="{{ node_name }}" state=absent
-      when: install_state == 'absent'
+- name: Install node modules
+  npm:
+    name: "{{ item.name | default(item) }}"
+    global: "{{ node_global_install }}"
+    path: "{{ node_modules_path }}"
+  with_items: "{{ node_modules }}"
   tags:
     - bootstrap
     - bootstrap_node
