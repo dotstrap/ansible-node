@@ -12,7 +12,7 @@ node_install_state: "{{ install_state }}"
 node_name: "{{ node_default_name }}"
 
 # The major version of node to install
-node_version: 9
+node_version: 10
 
 # Install the node.js libraries globally (Choices: yes, no)
 node_global_install: yes
